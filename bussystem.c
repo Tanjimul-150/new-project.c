@@ -9,6 +9,7 @@ typedef struct
 } Seat;
 Seat bus[MAX_SEATS];
 // Function to initialize the bus seats
+//Tanjimul Hassan
 void initializeBus() 
 {
     FILE *file = fopen("bus.txt", "r");
