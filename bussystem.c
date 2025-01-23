@@ -76,13 +76,11 @@ void bookTicket()
         return;
     }
     printf("Enter passenger name: ");
-    fgets(name, sizeof(name), stdin);  // Use fgets instead of scanf for strings
-    // Remove the newline character at the end of the name (if present)
+    fgets(name, sizeof(name), stdin);
     name[strcspn(name, "\n")] = '\0';
     bus[seatNumber - 1].isBooked = 1;
     strcpy(bus[seatNumber - 1].passengerName, name);
     printf("Ticket booked for %s at seat %d\n", name, seatNumber);
-    // Save the updated seat information to the file
     saveBus();
 }
 //Yafid
@@ -104,7 +102,6 @@ void cancelTicket()
     bus[seatNumber - 1].isBooked = 0;
     strcpy(bus[seatNumber - 1].passengerName, "");
     printf("Ticket for seat %d canceled\n", seatNumber);
-    // Save the updated seat information to the file
     saveBus();
 }
 //Labib(part-2)
